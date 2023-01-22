@@ -1,0 +1,193 @@
+- var categories = ['root-element-container','doc-metadata-container','inline-text-container','scripting-container','content-section-container','interactive-elements-container','text-content-container','embedded-content-container', 'forms-container','table-content-container','image-multimedia-container','obsolete-container']
+
+// ELEMENT MIXIN TEMPLATE
+mixin element(number, symbol, name, mass, weight, material, column, row)
+  .element(class=material)(class='c'+column)(class='r'+row)
+    input.activate(type='radio', name='elements')
+    input.deactivate(type='radio', name='elements')
+    .overlay
+    .square
+      .model
+        each item in weight.reverse()
+          .orbital
+            - for (var i = 0; i < item; i++)
+              .electron
+      .atomic-number= number
+      .label
+        .symbol= symbol
+        .name= name
+      .atomic-mass= mass
+      ul.atomic-weight
+        each item in weight.reverse()
+          li= item
+
+
+// PLACEHOLDER MIXIN TEMPLATE
+mixin placeholder(number, material, column, row)
+  .placeholder(class=material)(class='c'+column)(class='r'+row)
+    .square= number
+
+
+.wrapper
+  each item in categories
+    input.category-toggle(type='radio', id=item, name='categories')
+    input.category-cancel(type='radio', id='cancel' name='categories')
+  .periodic-table
+    +element(1, 'H', '<html>', 1.008, [1], 'root-element', 1, 1)
+    +element(2, 'Col', '<col>', 4.0026, [2], 'table-content', 17, 1)
+    +element(3, 'Tb', '<table>', 4.0026, [2], 'table-content', 18, 1)
+    +element(4, 'Hd', '<head>', 6.94, [3], 'document-metadata', 1, 2)
+    +element(5, 'Rt', '<rt>', 9.0122, [2,2], 'inline-text-container-semantics', 2, 2)
+    +element(6, 'Sp', '<span>', 10.81, [2,3], 'inline-text-container-semantics', 3, 2)
+    +element(7, 'U', '<u>', 12.011, [2,4], 'inline-text-container-semantics', 4, 2)
+    +element(8, 'Fs', '<fieldset>', 14.007, [2,5], 'form-controls', 12, 2)
+    +element(9, 'Frm', '<form>', 15.999, [2,6], 'form-controls', 13, 2)
+    +element(10, 'In', '<input>', 18.998, [2,7], 'form-controls', 14, 2)
+    +element(11, 'Obj', '<object>', 20.180, [2,8], 'embedded-content', 15, 2)
+    +element(12, 'Ifr', '<iframe>', 22.990, [2,8,1], 'embedded-content', 16, 2)
+    +element(13, 'Cg', '<colgroup>', 24.305, [2,8,2], 'table-content', 17, 2)
+    +element(14, 'Tr', '<tr>', 26.982, [2,8,3], 'table-content', 18, 2)
+    +element(15, 'Ti', '<title>', 30.974, [2,8,5], 'document-metadata', 1, 3)
+    +element(16, 'A', '<a>', 32.06, [2,8,6], 'inline-text-container-semantics', 3, 3)
+    +element(17, 'S', '<s>', 35.45, [2,8,7], 'inline-text-container-semantics', 4, 3)
+    +element(18, 'Me', '<meter>', 39.948, [2,8,8], 'form-controls', 12, 3)
+    +element(19, 'Sel', '<select>', 39.098, [2,8,8,1], 'form-controls', 13, 3)
+    +element(20, 'O', '<option>', 40.078, [2,8,8,2], 'form-controls', 14, 3)
+    +element(21, 'Src', '<source>', 44.956, [2,8,9,2], 'embedded-content', 15, 3)
+    +element(22, 'Emb', '<embed>', 47.867, [2,8,10,2], 'embedded-content', 16, 3)
+    +element(23, 'Cap', '<caption>', 50.942, [2,8,11,2], 'table-content', 17, 3)
+    +element(24, 'Td', '<td>', 51.996, [2,8,13,1], 'table-content', 18, 3)
+    +element(25, 'Mt', '<meta>', 54.938, [2,8,13,2], 'document-metadata', 1, 4)
+    +element(26, 'Dfn', '<dfn>', 55.845, [2,8,14,2], 'inline-text-container-semantics', 3, 4)
+    +element(27, 'Em', '<em>', 58.933, [2,8,15,2], 'inline-text-container-semantics', 4, 4)
+    +element(28, 'I', '<i>', 58.693, [2,8,16,2], 'inline-text-container-semantics', 5, 4)
+    +element(29, 'Sml', '<small>', 63.546, [2,8,18,1], 'inline-text-container-semantics', 6, 4)
+    +element(30, 'Ins', '<ins>', 65.38, [2,8,18,2], 'inline-text-container-semantics', 7, 4)
+    +element(31, 'Br', '<br>', 69.723, [2,8,18,3], 'inline-text-container-semantics', 8, 4)
+    +element(32, 'P', '<p>', 72.630, [2,8,18,4], 'text-content', 9, 4)
+    +element(33, 'Dv', '<div>', 74.922, [2,8,18,5], 'text-content', 10, 4)
+    +element(34, 'Bq', '<blockquote>', 78.971, [2,8,18,6], 'text-content', 11, 4)
+    +element(35, 'L', '<legend>', 79.904, [2,8,18,7], 'form-controls', 12, 4)
+    +element(36, 'Og', '<optgroup>', 83.798, [2,8,18,8], 'form-controls', 13, 4)
+    +element(37, 'Op', '<output>', 85.468, [2,8,18,8,1], 'form-controls', 14, 4)
+    +element(38, 'Map', '<map>', 87.62, [2,8,18,8,2], 'image-multimedia', 15, 4)
+    +element(39, 'Mnu', '<menu>', 91.224, [2,8,18,10,2], 'interactive-elements', 17, 4)
+    +element(40, 'Th', '<th>', 92.906, [2,8,18,12,1], 'table-content',18, 4)
+    +element(41, 'Bs', '<base>', 95.95, [2,8,18,13,1], 'document-metadata', 1, 5)
+    +element(42, 'C', '<canvas>', '(98)', [2,8,18,13,2], 'scripting', 2, 3)
+    +element(43, 'Ab', '<abbr>', 101.07, [2,8,18,15,1], 'inline-text-container-semantics', 3, 5)
+    +element(44, 'T', '<time>', 102.91, [2,8,18,16,1], 'inline-text-container-semantics', 4, 5)
+    +element(45, 'B', '<b>', 106.42, [2,8,18,18], 'inline-text-container-semantics', 5, 5)
+    +element(46, 'Str', '<strong>', 107.87, [2,8,18,18,1], 'inline-text-container-semantics', 6, 5)
+    +element(47, 'Del', '<del>', 112.41, [2,8,18,18,2], 'inline-text-container-semantics', 7, 5)
+    +element(48, 'Bdi', '<bdi>', 114.82, [2,8,18,18,3], 'inline-text-container-semantics', 8, 5)
+    +element(49, 'Fc', '<figcaption>', 204.38, [2,8,18,18,4], 'text-content', 9, 5)
+    +element(50, 'Ol', '<ol>', 121.76, [2,8,18,18,5], 'text-content', 10, 5)
+    +element(51, 'Dl', '<dl>', 127.60, [2,8,18,18,6], 'text-content', 11, 5)
+    +element(52, 'Lab', '<label>', 126.90, [2,8,18,18,7], 'form-controls', 12, 5)
+    +element(53, 'M', '<meter>', 126.90, [2,8,18,18,7], 'form-controls', 12, 5)
+    +element(54, 'Ta', '<textarea>', 131.29, [2,8,18,18,8], 'form-controls', 13, 5)
+    +element(55, 'Dtl', '<datalist>', 132.91, [2,8,18,18,8,1], 'form-controls', 14, 5)
+    +element(56, 'Trk', '<track>', 137.33, [2,8,18,18,8,2], 'image-multimedia', 15, 5)
+    +element(57, 'Img', '<img>', 138.91, [2,8,18,18,9,2], 'image-multimedia', 16, 5)
+    +element(58, 'Cmd', '<command>', 140.12, [2,8,18,19,9,2], 'interactive-elements', 17, 5)
+    +element(59, 'TBd', '<tbody>', 140.91, [2,8,18,21,8,2], 'table-content', 18, 5)
+    +element(60, 'Lk', '<link>', 144.24, [2,8,18,22,8,2], 'document-metadata', 1, 6)
+    +element(61, 'Ns', '<noscript>', 144.24, [2,8,18,23,8,2], 'scripting', 2, 4)
+    +element(62, 'Q', '<q>', 150.36, [2,8,18,24,8,2], 'inline-text-container-semantics', 3, 6)
+    +element(63, 'Var', '<var>', 151.96, [2,8,18,25,8,2], 'inline-text-container-semantics', 4, 6)
+    +element(64, 'Sub', '<sub>', 157.25, [2,8,18,25,9,2], 'inline-text-container-semantics', 5, 6)
+    +element(65, 'Mrk', '<mark>', 158.93, [2,8,18,27,8,2], 'inline-text-container-semantics', 6, 6)
+    +element(66, 'Kbd', '<kbd>', 162.50, [2,8,18,28,8,2], 'inline-text-container-semantics', 7, 6)
+    +element(67, 'WBr', '<wbr>', 164.93, [2,8,18,29,8,2], 'inline-text-container-semantics', 8, 6)
+    +element(68, 'Rtc', '<rtc>', 167.26, [2,8,18,30,8,2], 'inline-text-container-semantics', 9, 6)
+    +element(69, 'Mn', '<main>', 168.93, [2,8,18,31,8,2], 'text-content', 10, 6)
+    +element(70, 'Dt', '<dt>', 173.05, [2,8,18,32,8,2], 'text-content', 11, 6)
+    +element(71, 'Hr', '<hr>', 174.97, [2,8,18,32,9,2], 'text-content', 12, 6)
+    +element(72, 'Pre', '<pre>', 178.49, [2,8,18,32,10,2], 'text-content', 13, 6)
+    +element(73, 'Kg', '<keygen>', 180.95, [2,8,18,32,11,2], 'form-controls', 14, 6)
+    +element(74, 'Vi', '<video>', 183.84, [2,8,18,32,12,2], 'image-multimedia', 15, 6)
+    +element(75, 'Au', '<audio>', 186.21, [2,8,18,32,13,2], 'image-multimedia', 16, 6)
+    +element(76, 'Sum', '<summary>', 190.23, [2,8,18,32,14,2], 'interactive-elements', 17, 6)
+    +element(77, 'THd', '<thead>', 192.22, [2,8,18,32,15,2], 'table-content', 18, 6)
+    +element(78, 'St', '<style>', 195.08, [2,8,18,32,17,1], 'document-metadata', 1, 7)
+    +element(79, 'Sc', '<script>', 196.97, [2,8,18,32,18,1], 'scripting', 2, 5)
+    +element(80, 'Ci', '<cite>', 200.59, [2,8,18,32,18,2], 'inline-text-container-semantics', 3, 7)
+    +element(81, 'Sa', '<samp>', 204.38, [2,8,18,32,18,3], 'inline-text-container-semantics', 4, 7)
+    +element(82, 'Sup', '<sup>', 207.2, [2,8,18,32,18,4], 'inline-text-container-semantics', 5, 7)
+    +element(83, 'Rb', '<ruby>', 208.98, [2,8,18,32,18,5], 'inline-text-container-semantics', 6, 7)
+    +element(84, 'BDo', '<bdo>', '(209)', [2,8,18,32,18,6], 'inline-text-container-semantics', 7, 7)
+    +element(85, 'Co', '<code>', '(210)', [2,8,18,32,18,7], 'inline-text-container-semantics', 8, 7)
+    +element(86, 'Rp', '<rp>', '(222)', [2,8,18,32,18,8], 'inline-text-container-semantics', 9, 7)
+    +element(87, 'Ul', '<ul>', '(223)', [2,8,18,32,18,8,1], 'text-content', 10, 7)
+    +element(88, 'Dd', '<dd>', '(226)', [2,8,18,32,18,8,2], 'text-content', 11, 7)
+    +element(89, 'Fig', '<figure>', '(227)', [2,8,18,32,18,9,2], 'text-content', 12, 7)
+    +element(90, 'Li', '<li>', 232.04, [2,8,18,32,18,10,2], 'text-content', 13, 7)
+    +element(91, 'Pro', '<progress>', 231.04, [2,8,18,32,20,9,2], 'form-controls', 14, 7)
+    +element(92, 'Btn', '<button>', 238.03, [2,8,18,32,21,9,2], 'form-controls', 15, 7)
+    +element(93, 'Ar', '<area>', '(237)', [2,8,18,32,22,9,2], 'image-multimedia', 16, 7)
+    +element(94, 'Det', '<details>', '(244)', [2,8,18,32,24,8,2], 'interactive-elements', 17, 7)
+    +element(95, 'Tf', '<tfoot>', '(243)', [2,8,18,32,25,8,2], 'table-content', 18, 7)
+    +element(96, 'F', '<footer>', '(247)', [2,8,18,32,25,9,2], 'content-section', 3, 9)
+    +element(97, 'As', '<aside>', '(247)', [2,8,18,32,27,8,2], 'content-section', 4, 9)
+    +element(98, 'He', '<header>', '(251)', [2,8,18,32,28,8,2], 'content-section', 5, 9)
+    +element(99, 'Sec', '<section>', '(252)', [2,8,18,32,29,8,2], 'content-section', 6, 9)
+    +element(100, 'Hg', '<hgroup>', '(257)', [2,8,18,32,30,8,2], 'content-section', 7, 9)
+    +element(101, 'Adr', '<address>', '(258)', [2,8,18,32,31,8,2], 'content-section', 8, 9)
+    +element(102, 'H1', '<h1>', '(259)', [2,8,18,32,32,8,2], 'content-section', 9, 9)
+    +element(103, 'H2', '<h2>', '(266)', [2,8,18,32,32,8,3], 'content-section', 10, 9)
+    +element(104, 'H3', '<h3>', '(267)', [2,8,18,32,32,10,2], 'content-section', 11, 9)
+    +element(105, 'H4', '<h4>', '(268)', [2,8,18,32,32,11,2], 'content-section', 12, 9)
+    +element(106, 'H5', '<h5>', '(269)', [2,8,18,32,32,12,2], 'content-section', 13, 9)
+    +element(107, 'H6', '<h6>', '(270)', [2,8,18,32,32,13,2], 'content-section', 14, 9)
+    +element(108, 'Bd', '<body>', '(277)', [2,8,18,32,32,14,2], 'content-section', 15, 9)
+    +element(109, 'Art', '<article>', '(278)', [2,8,18,32,32,15,2], 'content-section', 16, 9)
+    +element(110, 'Nav', '<nav>', '(281)', [2,8,18,32,32,17,1], 'content-section', 17, 9)
+    +element(111, 'Frs', '<frameset>', '(282)', [2,8,18,32,32,17,2], 'obsolete', 18, 9)
+    +element(112, 'Acr', '<acronym>', '(283)', [2,8,18,32,32,18,2], 'obsolete', 1, 10)
+    +element(113, 'Xmp', '<xmp>', '(286)', [2,8,18,32,32,18,3], 'obsolete', 2, 10)
+    +element(114, 'Dia', '<dialog>', '(289)', [2,8,18,32,32,18,4], 'obsolete', 3, 10)
+    +element(115, 'Bgs', '<bgsound>', '(290)', [2,8,18,32,32,18,5], 'obsolete', 4, 10)
+    +element(116, 'Ne', '<noembed>', '(293)', [2,8,18,32,32,18,6], 'obsolete', 5, 10)
+    +element(117, 'Apl', '<applet>', '(294)', [2,8,18,32,32,18,7], 'obsolete', 6, 10)
+    +element(118, 'Fr', '<frame>', '(295)', [2,8,18,32,32,18,8], 'obsolete', 7, 10)
+    +element(119, 'Str', '<strike>', '(296)', [2,8,18,32,32,18,8], 'obsolete', 8, 10)
+    +element(120, 'Bi', '<big>', '(297)', [2,8,18,32,32,18,8], 'obsolete', 9, 10)
+    +element(121, 'Fnt', '<font>', '(298)', [2,8,18,32,32,18,8], 'obsolete', 10, 10)
+    +element(122, 'Cnt', '<center>', '(299)', [2,8,18,32,32,18,8], 'obsolete', 11, 10)
+    +element(123, 'Tt', '<tt>', '(300)', [2,8,18,32,32,18,8], 'obsolete', 12, 10)
+    +element(124, 'Pt', '<plaintext>', '(301)', [2,8,18,32,32,18,8], 'obsolete', 13, 10)
+    +element(125, 'Dir', '<dir>', '(302)', [2,8,18,32,32,18,8], 'obsolete', 14, 10)
+    +element(126, 'Bf', '<basefont>', '(303)', [2,8,18,32,32,18,8], 'obsolete', 15, 10)
+    +element(127, 'Nf', '<noframes>', '(304)', [2,8,18,32,32,18,8], 'obsolete', 16, 10)
+    +element(128, 'Bl', '<blink>', '(305)', [2,8,18,32,32,18,8], 'obsolete', 17, 10)
+    +element(129, 'Ii', '<isindex>', '(306)', [2,8,18,32,32,18,8], 'obsolete', 18, 10)
+    +element(130, 'Mi', '<menuitem>', '(306)', [2,8,18,32,32,18,8], 'obsolete', 18, 10)
+    +element(131, 'Spc', '<spacer>', '(306)', [2,8,18,32,32,18,8], 'obsolete', 18, 10)
+    +element(132, 'Sh', '<shadow>', '(306)', [2,8,18,32,32,18,8], 'obsolete', 18, 10)
+    +element(133, 'Nbr', '<nobr>', '(306)', [2,8,18,32,32,18,8], 'obsolete', 18, 10)
+    +element(134, 'Par', '<param>', 88.906, [2,8,18,9,2], 'obsolete', 16, 4)
+    +element(135, 'Tmp', '<template>', '(306)', [2,8,18,32,32,18,8], 'web-component', 18, 11)
+    +element(136, 'Sl', '<slot>', '(306)', [2,8,18,32,32,18,8], 'web-component', 18, 11)
+    
+    +placeholder('61-75', 'content-section', 2, 6)
+    +placeholder('89-103', 'obsolete', 2, 7)
+    
+    .gap.c2.r8
+    
+    .key
+      .row
+        label.root-element(for='root-element-container') Main Root
+        label.document-metadata(for='doc-metadata-container') Document Metadata
+        label.inline-text-container-semantics(for='inline-text-container') Inline text semantics
+        label.scripting(for='scripting-container') Scripting
+        label.content-section(for='content-section-container') Content sectioning
+        label.interactive-elements(for='interactive-elements-container') Interactive elements
+        label.text-content(for='text-content-container') Text content
+        label.embedded-content(for='embedded-content-container') Embedded content
+        label.form-controls(for='forms-container') Forms
+        label.table-content(for='table-content-container') Table content
+        label.image-multimedia(for='image-multimedia-container') Image &amp; multimedia
+        label.obsolete(for='obsolete-container') Obsolete &amp; deprecated
+
+
