@@ -4,13 +4,18 @@ module.exports = {
     node: true,
     es6: true,
   },
-  extends: ['eslint:recommended'],
-  plugins: ['prettier'],
+  extends: ['eslint:recommended', 'prettier', ],
+  ignorePatterns: ['**/*.d.ts', '/dist'],
+  plugins: [
+    'prettier',
+  ],
   rules: {
     'prettier/prettier': [
       'warn',
       {
-        semi: true,
+        'space-before-function-paren': 0,
+        semi: ['warn', 'always'],
+        indent: ['warn', 2],
         singleQuote: true,
         tabWidth: 2,
         endOfLine: 'auto',
@@ -19,7 +24,12 @@ module.exports = {
     ],
     'comma-dangle': ['error', 'only-multiline'],
     'linebreak-style': ['error', 'windows'],
-    'no-param-reassign': [2, { props: false }],
+    'no-param-reassign': [2, {
+      props: false
+    }],
   },
   parser: '@babel/eslint-parser',
+  overrides: [{
+    files: ['**/*.{t,j}s?(x)'],
+  }, ],
 };

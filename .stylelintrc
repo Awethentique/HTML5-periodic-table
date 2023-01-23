@@ -1,0 +1,32 @@
+{
+    "plugins": [
+        "stylelint-scss",
+        "stylelint-order",
+        "stylelint-declaration-use-variable"
+    ],
+    "extends": [
+        "stylelint-config-sass-guidelines",
+        "stylelint-config-idiomatic-order"
+    ],
+    "rules": {
+        "indentation": 2,
+        "max-nesting-depth": 6,
+        "selector-max-compound-selectors": 6,
+        "order/properties-alphabetical-order": null,
+        "scss/at-mixin-pattern": null,
+        "selector-class-pattern": null,
+        "selector-no-qualifying-type": [true, ignore: ["attribute", "class"]],
+        "sh-waqar/declaration-use-variable": [[
+            "/color/",
+            "font-size",
+            "font-family",
+            "font-weight",
+            {
+                "ignoreValues": [
+                    "/rgba\\(\\$/",
+                    "transparent"
+                ]
+            }
+        ]]
+    }
+}
