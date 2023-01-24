@@ -1,4 +1,4 @@
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) and (orientation: landscape) {
   html,
   body {
     height: 100%;
@@ -29,12 +29,45 @@
           background-color: $background-color_1;
           height: 100%;
           width: 100%;
-          font-size: 6vw;
+          font-size: 3vw;
+          z-index: 2;
+          -webkit-transition: all 0.3s ease-in-out;
+          -moz-transition: all 0.3s ease-in-out;
+          -o-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+
+          &.hidden {
+            transform: translateX(-100%);
+            -webkit-transform: translateX(-100%);
+          }
           label {
             padding: $container-padding;
             border-bottom: 1px solid $separator-color_1;
           }
         }
+      }
+    }
+  }
+}
+
+@media (orientation: portrait) {
+  .scrim {
+    &.no-portrait {
+      display: flex;
+      color: $heading-color_1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      backdrop-filter: blur(2px);
+      z-index: 3;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: $mask-color_1;
+      .rotate-image {
+        width: 200px;
       }
     }
   }
