@@ -1,0 +1,10 @@
+{
+  "name": "xxxxxxx",
+  "short_name": "xxxxxxx",
+  "icons": [],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "orientation": "portrait"
+}

@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'ProximaNovaRegular';
+	src: url('./ProximaNovaRegular.eot');
+	src: local('ProximaNovaRegular'), url('./ProximaNovaRegular.woff') format('woff'), url('./ProximaNovaRegular.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_58703">Text with this font applied</p> */
+.fontsforweb_fontid_58703 {
+	font-family: 'ProximaNovaRegular' !important;
+}
+
+/* Font downloaded from FontsForWeb.com */
