@@ -1,0 +1,27 @@
+@mixin keys-activity($class-name) {
+  &:checked {
+    ~ {
+      .periodic-table {
+        .element {
+          #{$class-name} {
+            opacity: 0.15;
+            pointer-events: none;
+          }
+        }
+
+        .placeholder {
+          opacity: 0.15;
+          pointer-events: none;
+        }
+
+        .key {
+          label {
+            #{$class-name} {
+              opacity: 0.65;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+#main-root-container {
+  @include keys-activity('&:not(.main-root)');
+}
+
+#doc-metadata-container {
+  @include keys-activity('&:not(.document-metadata)');
+}
+
+#sectioning-root-container {
+  @include keys-activity('&:not(.sectioning-root)');
+}
+
+#inline-text-container {
+  @include keys-activity('&:not(.inline-text-semantics)');
+}
+
+#content-sectioning-container {
+  @include keys-activity('&:not(.content-sectioning)');
+}
+
+#interactive-elements-container {
+  @include keys-activity('&:not(.interactive-elements)');
+}
+
+#text-content-container {
+  @include keys-activity('&:not(.text-content)');
+}
+
+#embedded-content-container {
+  @include keys-activity('&:not(.embedded-content)');
+}
+
+#svg-and-mathml-container {
+  @include keys-activity('&:not(.svg-and-mathml)');
+}
+
+#scripting-container {
+  @include keys-activity('&:not(.scripting)');
+}
+
+#demarcating-edits-container {
+  @include keys-activity('&:not(.demarcating-edits)');
+}
+
+#forms-container {
+  @include keys-activity('&:not(.form-controls)');
+}
+
+#table-content-container {
+  @include keys-activity('&:not(.table-content)');
+}
+
+#image-multimedia-container {
+  @include keys-activity('&:not(.image-multimedia)');
+}
+
+#web-components-container {
+  @include keys-activity('&:not(.web-components)');
+}
+
+#obsolete-container {
+  @include keys-activity('&:not(.obsolete)');
+}
