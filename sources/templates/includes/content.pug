@@ -35,13 +35,13 @@ mixin placeholder(number, material, column, row)
     h1 Periodic table of HTML5 elements
   main.main
     //- block legend
-    include ./legend.pug
+    include ../components/legend.pug
 
     each item in categories
       input.category-toggle(type='radio', id=item, name='categories')
       input.category-cancel(type='radio', id='cancel' name='categories')
     section.periodic-table
-      include ./elements.pug
+      include ../components/elements.pug
 
       .gap.line.c3.r8
       .gap.c3.r9

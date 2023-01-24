@@ -1,13 +1,3 @@
-@import './color-theme1.scss';
-@import './mixins.scss';
-@import './element.scss';
-@import './grid-definitions.scss';
-@import './keyframes.scss';
-@import './groups.scss';
-@import './containers.scss';
-@import './media-queries.scss';
-@import './html5-logo.scss';
-
 body {
   background: #101318;
   margin: 0;
@@ -25,14 +15,17 @@ body {
     font-family: $font-family;
     text-align: center;
     font-size: 1vw;
+
     h1 {
       display: flex;
       justify-content: center;
       align-items: center;
     }
   }
+
   .main {
     display: flex;
+
     > input {
       -webkit-appearance: none;
       position: fixed;
@@ -85,6 +78,7 @@ body {
   position: relative;
   padding-bottom: 100%;
   transition: 500ms;
+
   &.line {
     &::before {
       content: '';
