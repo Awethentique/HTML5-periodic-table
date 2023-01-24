@@ -1,0 +1,41 @@
+@media screen and (max-width: 767px) {
+  html,
+  body {
+    height: 100%;
+  }
+
+  .content-area {
+    .wrapper {
+      height: 100vh;
+      overflow: auto;
+      padding: 0;
+      .header {
+        font-size: 2.3vw;
+        padding: $container-padding;
+        border-bottom: 1px solid $separator-color_1;
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background-color: $background-color_1;
+        display: flex;
+        svg {
+          &.html-logo {
+          }
+        }
+      }
+      .main {
+        .key {
+          position: absolute;
+          background-color: $background-color_1;
+          height: 100%;
+          width: 100%;
+          font-size: 6vw;
+          label {
+            padding: $container-padding;
+            border-bottom: 1px solid $separator-color_1;
+          }
+        }
+      }
+    }
+  }
+}
