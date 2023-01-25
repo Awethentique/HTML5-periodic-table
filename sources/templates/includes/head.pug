@@ -1,0 +1,19 @@
+mixin head(DATA)
+    link(rel="dns-prefetch", href="//google-analytics.com")
+    link(rel="preconnect", href="//fonts.gstatic.com/", crossorigin)
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css", crossorigin)
+
+    meta(charset="utf-8")
+    meta(http-equiv="x-ua-compatible", content="ie=edge")
+    meta(name="description", content=DATA.head.description)
+    meta(name="viewport", content="width=device-width, initial-scale=1, minimum-scale=1")
+    meta(name="robots", content="index,follow")
+    meta(name="theme-color", content="#ffffff")
+    meta(name="msapplication-navbutton-color", content="#ffffff")
+    meta(name="apple-mobile-web-app-status-bar-style" content="#ffffff")
+    meta(content="telephone=no", name="format-detection")
+
+    title= DATA.head.title
+    
+    link(rel="manifest",href="/assets/manifest.json")
+    link(rel="icon" type="image/x-icon" href="./favicon/favicon.ico")
