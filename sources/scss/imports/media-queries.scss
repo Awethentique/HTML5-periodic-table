@@ -12,25 +12,58 @@
       .header {
         font-size: 2.3vw;
         padding: $container-padding;
-        border-bottom: 1px solid $separator-color_1;
         position: sticky;
         top: 0;
-        z-index: 2;
-        background-color: $background-color_1;
-        display: flex;
         svg {
           &.html-logo {
           }
         }
       }
       .main {
+        .menu {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: $header-background-comp;
+          width: 54px;
+          height: 54px;
+          position: fixed;
+          top: 3%;
+          left: 0;
+          border-radius: 0 8px 8px 0;
+          z-index: 3;
+          -webkit-box-shadow: 4px 4px 7px 0px rgba(0, 0, 0, 0.39);
+          -moz-box-shadow: 4px 4px 7px 0px rgba(0, 0, 0, 0.39);
+          box-shadow: 4px 4px 7px 0px rgba(0, 0, 0, 0.39);
+          -webkit-transition: all 0.3s ease-in-out;
+          -moz-transition: all 0.3s ease-in-out;
+          -o-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+          &.open {
+            -webkit-box-shadow: inset 4px 4px 7px 0px rgba(0, 0, 0, 0.39);
+            -moz-box-shadow: inset 4px 4px 7px 0px rgba(0, 0, 0, 0.39);
+            box-shadow: inset 4px 4px 7px 0px rgba(0, 0, 0, 0.39);
+            .fas {
+              &.fa-bars {
+                &::before {
+                  content: '\f00d';
+                }
+              }
+            }
+          }
+          .fas {
+            color: $heading-color_1;
+            font-size: 32px;
+          }
+        }
+
         .key {
           position: absolute;
           background-color: $background-color_1;
           height: 100%;
           width: 100%;
           font-size: 3vw;
-          z-index: 2;
+          opacity: 1;
           -webkit-transition: all 0.3s ease-in-out;
           -moz-transition: all 0.3s ease-in-out;
           -o-transition: all 0.3s ease-in-out;
@@ -39,11 +72,27 @@
           &.hidden {
             transform: translateX(-100%);
             -webkit-transform: translateX(-100%);
+            opacity: 0;
+            ~ {
+              .periodic-table {
+                display: grid;
+                opacity: 1;
+              }
+            }
           }
           label {
             padding: $container-padding;
             border-bottom: 1px solid $separator-color_1;
           }
+        }
+        .periodic-table {
+          -webkit-transition: all 0.3s ease-in-out;
+          -moz-transition: all 0.3s ease-in-out;
+          -o-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+          display: none;
+          opacity: 0;
+          margin-top: 0;
         }
       }
     }
@@ -68,7 +117,23 @@
       background-color: $mask-color_1;
       .rotate-image {
         width: 200px;
+        transform: rotate(-45deg);
+        animation-duration: 4s;
+        animation-timing-function: ease-in-out;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        animation-fill-mode: none;
+        animation-play-state: running;
+        animation-name: rotate;
       }
     }
+  }
+}
+
+@keyframes rotate {
+  30%,
+  100% {
+    transform: rotate(30deg);
   }
 }
