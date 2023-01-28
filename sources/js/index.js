@@ -1,7 +1,5 @@
 import '../scss/index.scss';
 $(document).ready(function () {
-
-
   // handle menu click
   $('.menu').on('click', function () {
     $('.key').toggleClass('hidden');
@@ -20,7 +18,7 @@ $(document).ready(function () {
     }, delay);
   };
 
-// throttle for scroll
+  // throttle for scroll
   function throttle(func, delay) {
     var lastTime = 0;
     return function () {

@@ -84,6 +84,10 @@ module.exports = merge(baseConfig, {
     ],
   },
   optimization: configureOptimization(),
+  performance: {
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  },
   plugins: [
     new CleanWebpackPlugin({
       dry: false,
