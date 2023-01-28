@@ -1,29 +1,57 @@
-body {
-  background: #101318;
+html {
   margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--app-background);
+  margin: 0;
+  min-height: 100vh;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow: hidden;
 
   .header {
-    color: $heading-color_1;
-    font-family: $font-family;
     text-align: center;
     font-size: 1vw;
     z-index: 2;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
-    background: $header-background;
-    background: $header-background-comp;
-    h1 {
+    margin: 16px 0;
+    color: var(--heading-text);
+    font-family: var(--font-family);
+    overflow-anchor: none;
+    position: sticky;
+    top: 0;
+    transition: all 0.3s;
+
+    &.collapsed {
+      font-size: 0.8vw;
+
+      svg {
+        width: 28px;
+        margin-right: 8px;
+      }
+    }
+
+    .header-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
+      background: var(--app-background);
+      width: 100%;
+      z-index: 1;
+      h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     }
   }
 
@@ -41,13 +69,16 @@ body {
       opacity: 0;
       pointer-events: none;
     }
+    .menu {
+      display: none;
+    }
   }
 }
 
 .periodic-table {
   display: grid;
   width: 100%;
-  margin: 2%;
+  margin: 2% 2% 4% 2%;
   grid-gap: 4px;
   grid-template-columns: repeat(18, 1fr);
   text-shadow: 0 0 0.4vw currentColor;
@@ -58,7 +89,7 @@ body {
   z-index: -1;
   font-size: 1vw;
   padding-bottom: 100%;
-  color: $color_1;
+  color: var(--color-1);
   transition: 500ms;
 
   .square {
@@ -93,7 +124,7 @@ body {
       border-width: 0 0 2px 2px;
       border-style: solid;
       margin-left: -1px;
-      color: $color_1;
+      color: var(--color-1);
       opacity: 0.2;
     }
   }
@@ -102,11 +133,12 @@ body {
 .key {
   position: relative;
   z-index: 1;
-  font-family: $font-family;
+  font-family: var(--font-family);
   font-size: 1.3vw;
   line-height: 1.8;
   pointer-events: none;
   user-select: none;
+  padding: 0 16px;
 
   label {
     display: block;
@@ -115,9 +147,17 @@ body {
     transition: 120ms;
     pointer-events: all;
     white-space: nowrap;
+    color: var(--heading-text);
 
     &:hover {
       opacity: 1 !important;
+    }
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 1.3vw;
+      height: 1.3vw;
+      margin-right: 8px;
     }
   }
 }
@@ -149,4 +189,35 @@ body {
 }
 .scrim {
   display: none;
+}
+
+.cc-slit {
+  position: relative;
+  top: -18px;
+  width: 100%;
+
+  &::after,
+  &::before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+  }
+
+  &::before {
+    height: 3px;
+    width: 80%;
+    background: var(--slit-gradient);
+    transform: translateY(25px);
+    filter: blur(6px);
+    position: relative;
+  }
+
+  &::after {
+    height: inherit;
+    background: inherit;
+    width: 100%;
+    transform: translateY(0);
+    background: var(--app-background);
+    height: 20px;
+  }
 }

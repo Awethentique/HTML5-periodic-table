@@ -24,4 +24,10 @@ module.exports = {
     }],
   },
   parser: '@babel/eslint-parser',
+  ignorePatterns: [
+    "node_modules",
+    "build",
+    "dist",
+    "public"
+  ]
 };

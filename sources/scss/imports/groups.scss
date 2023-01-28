@@ -1,63 +1,63 @@
 .main-root {
-  color: $color_1;
+  @include keys-color(var(--color-1));
 }
 
 .document-metadata {
-  color: $color_2;
+  @include keys-color(var(--color-2));
 }
 
 .sectioning-root {
-  color: $color_3;
+  @include keys-color(var(--color-3));
 }
 
 .content-sectioning {
-  color: $color_4;
+  @include keys-color(var(--color-4));
 }
 
 .text-content {
-  color: $color_5;
+  @include keys-color(var(--color-5));
 }
 
 .inline-text-semantics {
-  color: $color_6;
+  @include keys-color(var(--color-6));
 }
 
 .image-multimedia {
-  color: $color_7;
+  @include keys-color(var(--color-7));
 }
 
 .embedded-content {
-  color: $color_8;
+  @include keys-color(var(--color-8));
 }
 
 .svg-and-mathml {
-  color: $color_9;
+  @include keys-color(var(--color-9));
 }
 
 .scripting {
-  color: $color_10;
+  @include keys-color(var(--color-10));
 }
 
 .demarcating-edits {
-  color: $color_11;
+  @include keys-color(var(--color-11));
 }
 
 .table-content {
-  color: $color_12;
+  @include keys-color(var(--color-12));
 }
 
 .form-controls {
-  color: $color_13;
+  @include keys-color(var(--color-13));
 }
 
 .interactive-elements {
-  color: $color_14;
+  @include keys-color(var(--color-14));
 }
 
 .web-components {
-  color: $color_15;
+  @include keys-color(var(--color-15));
 }
 
 .obsolete {
-  color: $color_16;
+  @include keys-color(var(--color-16));
 }

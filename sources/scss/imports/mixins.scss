@@ -25,3 +25,28 @@
     }
   }
 }
+@mixin keys-color($color) {
+  &.element {
+    color: $color;
+  }
+
+  &::before {
+    background-color: $color;
+  }
+}
+
+@mixin scrimStyle {
+  display: flex;
+  color: var(--heading-text);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  backdrop-filter: blur(2px);
+  z-index: 3;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--mask-color-1);
+}

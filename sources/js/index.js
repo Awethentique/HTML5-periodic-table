@@ -1,13 +1,57 @@
 import '../scss/index.scss';
 $(document).ready(function () {
-  console.log('js-file');
+
+
+  // handle menu click
   $('.menu').on('click', function () {
     $('.key').toggleClass('hidden');
-    $('.menu').toggleClass('open');
+    $('.wrapper').toggleClass('open');
   });
   $('.key label').on('click', function (e) {
     e.stopPropagation();
     $('.key').addClass('hidden');
-    $('.menu').removeClass('open');
+    $('.wrapper').removeClass('open');
+  });
+  // debounce for scroll
+  const debounce = (func, delay) => {
+    clearTimeout(func._tId);
+    func._tId = setTimeout(function () {
+      func();
+    }, delay);
+  };
+
+// throttle for scroll
+  function throttle(func, delay) {
+    var lastTime = 0;
+    return function () {
+      var now = new Date();
+      if (now - lastTime >= delay) {
+        func();
+        lastTime = now;
+      }
+    };
+  }
+
+  //  scroll handler
+  const scrollFunction = () => {
+    if (
+      document.body.scrollTop > 50 ||
+      document.documentElement.scrollTop > 50
+    ) {
+      $('header').addClass('collapsed');
+    } else {
+      $('header').removeClass('collapsed');
+    }
+  };
+  window.onscroll = function () {
+    throttle(scrollFunction(), 100);
+  };
+  // hide loader for starting
+  $(window).on('load', function () {
+    setTimeout(function () {
+      var $ = jQuery;
+      var $container = $('.loader');
+      $container.addClass('hidden');
+    }, 2100);
   });
 });
