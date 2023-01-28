@@ -27,10 +27,10 @@ mixin placeholder(number, material, column, row)
   .placeholder(class=material)(class='c'+column)(class='r'+row)
     .square= number
 
+.loader
+  .ring loading
+    span
 
-.scrim.no-portrait
-  img.rotate-image(src='./images/rotate-phone.png')
-  p Rotate your device
 
 .wrapper 
   include ../components/header.pug
@@ -46,3 +46,7 @@ mixin placeholder(number, material, column, row)
 
       .gap.line.c3.r8
       .gap.c3.r9
+      
+.scrim.no-portrait
+  img.rotate-image(src='./images/rotate-phone.png')
+  p Rotate your device
