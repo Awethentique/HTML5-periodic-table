@@ -50,6 +50,6 @@ $(document).ready(function () {
       var $ = jQuery;
       var $container = $('.loader');
       $container.addClass('hidden');
-    }, 2100);
+    }, 1800);
   });
 });
