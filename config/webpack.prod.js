@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const baseConfig = require('./webpack.base.js');
 const { merge } = require('webpack-merge');
+const path = require("path");
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -66,6 +67,11 @@ const configureCopy = () => {
 module.exports = merge(baseConfig, {
   mode: 'production',
   target: 'browserslist',
+  output: {
+    path: path.join(__dirname,
+      "../../Awethentique.github.io/public/projects/HTML5-Periodic"),
+    filename: "bundle.js",
+  },
   module: {
     rules: [
       {
@@ -84,6 +90,10 @@ module.exports = merge(baseConfig, {
     ],
   },
   optimization: configureOptimization(),
+  performance: {
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  },
   plugins: [
     new CleanWebpackPlugin({
       dry: false,

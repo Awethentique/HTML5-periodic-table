@@ -12,8 +12,8 @@
     "core-js"
   ],
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack serve --config ./config/webpack.dev.js --progress",
-    "prod": "cross-env NODE_ENV=production webpack --config ./config/webpack.prod.js --progress"
+    "start": "cross-env NODE_ENV=development webpack serve --config ./config/webpack.dev.js --progress",
+    "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.prod.js --progress"
   },
   "browserslist": {
     "production": [
