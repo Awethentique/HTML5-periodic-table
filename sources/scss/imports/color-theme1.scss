@@ -1,31 +1,33 @@
-$color_1: #fff;
-$color_10: #c83bff;
-$color_3: #ec77a3;
-$color_4: #ecbe59;
-$color_5: #abf88d;
-$color_7: #3aefb6;
-$color_6: #dee955;
-$color_15: #4cddf3;
-$color_2: #759fff;
-$color_13: #c686cc;
-$color_12: #fd8572;
-$color_9: #eeb052;
-$color_8: #5283ee;
-$color_14: #52ee61;
-$color_11: #ee52ad;
-$color_16: #b6b6b6;
-$heading-color_1: #fff;
-$background-color_1: #101318;
-$header-background: rgb(2, 0, 36);
-$header-background-comp: linear-gradient(
-  0deg,
-  rgba(2, 0, 36, 0) 0%,
-  rgba(16, 19, 24, 1) 35%,
-  rgba(9, 9, 121, 1) 100%
-);
-$mask-color_1: #101318ab;
-$background-color_2: currentColor;
-$separator-color_1: #1e2024;
+.theme-1 {
+  --color-1: #fff;
+  --color-2: #759fff;
+  --color-3: #ec77a3;
+  --color-4: #ecbe59;
+  --color-5: #abf88d;
+  --color-6: #dee955;
+  --color-7: #3aefb6;
+  --color-8: #5283ee;
+  --color-9: #eeb052;
+  --color-10: #c83bff;
+  --color-11: #ee52ad;
+  --color-12: #fd8572;
+  --color-13: #c686cc;
+  --color-14: #52ee61;
+  --color-15: #4cddf3;
+  --color-16: #b6b6b6;
+  --heading-color-1: #fff;
+  --background-color-1: #101318;
+  --header-background: rgb(2, 0, 36);
+  --header-background-comp: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 0) 0%,
+    rgba(16, 19, 24, 1) 35%,
+    rgba(9, 9, 121, 1) 100%
+  );
+  --mask-color-1: #101318ab;
+  --background-color-2: currentColor;
+  --separator-color-1: #1e2024;
 
-$container-padding: 4px 16px;
-$font-family: Helvetica, sans-serif;
+  --container-padding: 4px 16px;
+  --font-family: Helvetica, sans-serif;
+}

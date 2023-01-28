@@ -11,7 +11,7 @@
       padding: 0;
       .header {
         font-size: 2.3vw;
-        padding: $container-padding;
+        padding: var(--container-padding);
         position: sticky;
         top: 0;
         svg {
@@ -24,7 +24,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          background: $header-background-comp;
+          background: var(--header-background-comp);
           width: 54px;
           height: 54px;
           position: fixed;
@@ -52,14 +52,14 @@
             }
           }
           .fas {
-            color: $heading-color_1;
+            color: var(--heading-color-1);
             font-size: 32px;
           }
         }
 
         .key {
           position: absolute;
-          background-color: $background-color_1;
+          background-color: var(--background-color-1);
           height: 100%;
           width: 100%;
           font-size: 3vw;
@@ -81,8 +81,8 @@
             }
           }
           label {
-            padding: $container-padding;
-            border-bottom: 1px solid $separator-color_1;
+            padding: var(--container-padding);
+            border-bottom: 1px solid var(--separator-color-1);
           }
         }
         .periodic-table {
@@ -103,7 +103,7 @@
   .scrim {
     &.no-portrait {
       display: flex;
-      color: $heading-color_1;
+      color: var(--heading-color-1);
       position: absolute;
       top: 0;
       right: 0;
@@ -114,7 +114,7 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      background-color: $mask-color_1;
+      background-color: var(--mask-color-1);
       .rotate-image {
         width: 200px;
         transform: rotate(-45deg);

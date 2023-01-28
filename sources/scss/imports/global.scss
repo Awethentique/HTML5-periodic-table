@@ -10,16 +10,16 @@ body {
   overflow: hidden;
 
   .header {
-    color: $heading-color_1;
-    font-family: $font-family;
+    color: var(--heading-color-1);
+    font-family: var(--font-family);
     text-align: center;
     font-size: 1vw;
     z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: $header-background;
-    background: $header-background-comp;
+    background: var(--header-background);
+    background: var(--header-background-comp);
     h1 {
       display: flex;
       justify-content: center;
@@ -58,7 +58,7 @@ body {
   z-index: -1;
   font-size: 1vw;
   padding-bottom: 100%;
-  color: $color_1;
+  color: var(--color-1);
   transition: 500ms;
 
   .square {
@@ -93,7 +93,7 @@ body {
       border-width: 0 0 2px 2px;
       border-style: solid;
       margin-left: -1px;
-      color: $color_1;
+      color: var(--color-1);
       opacity: 0.2;
     }
   }
@@ -102,7 +102,7 @@ body {
 .key {
   position: relative;
   z-index: 1;
-  font-family: $font-family;
+  font-family: var(--font-family);
   font-size: 1.3vw;
   line-height: 1.8;
   pointer-events: none;
