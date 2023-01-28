@@ -15,9 +15,20 @@
   --color-14: #52ee61;
   --color-15: #4cddf3;
   --color-16: #b6b6b6;
-  --heading-color-1: #fff;
-  --background-color-1: #101318;
+  --heading-text: var(--color-16);
+  --app-background: #101318;
+  --app-background: #151618;
   --header-background: rgb(2, 0, 36);
+  --shadow-mid-out: #384051;
+  --shadow-center: #9c9c9c;
+  --slit-gradient: linear-gradient(
+    90deg,
+    var(--app-background) 0%,
+    var(--shadow-mid-out) 25%,
+    var(--shadow-center) 50%,
+    var(--shadow-mid-out) 75%,
+    var(--app-background) 100%
+  );
   --header-background-comp: linear-gradient(
     0deg,
     rgba(2, 0, 36, 0) 0%,

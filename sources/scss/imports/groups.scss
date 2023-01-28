@@ -1,63 +1,63 @@
 .main-root {
-  color: var(--color-1);
+  @include keys-color(var(--color-1));
 }
 
 .document-metadata {
-  color: var(--color-2);
+  @include keys-color(var(--color-2));
 }
 
 .sectioning-root {
-  color: var(--color-3);
+  @include keys-color(var(--color-3));
 }
 
 .content-sectioning {
-  color: var(--color-4);
+  @include keys-color(var(--color-4));
 }
 
 .text-content {
-  color: var(--color-5);
+  @include keys-color(var(--color-5));
 }
 
 .inline-text-semantics {
-  color: var(--color-6);
+  @include keys-color(var(--color-6));
 }
 
 .image-multimedia {
-  color: var(--color-7);
+  @include keys-color(var(--color-7));
 }
 
 .embedded-content {
-  color: var(--color-8);
+  @include keys-color(var(--color-8));
 }
 
 .svg-and-mathml {
-  color: var(--color-9);
+  @include keys-color(var(--color-9));
 }
 
 .scripting {
-  color: var(--color-10);
+  @include keys-color(var(--color-10));
 }
 
 .demarcating-edits {
-  color: var(--color-11);
+  @include keys-color(var(--color-11));
 }
 
 .table-content {
-  color: var(--color-12);
+  @include keys-color(var(--color-12));
 }
 
 .form-controls {
-  color: var(--color-13);
+  @include keys-color(var(--color-13));
 }
 
 .interactive-elements {
-  color: var(--color-14);
+  @include keys-color(var(--color-14));
 }
 
 .web-components {
-  color: var(--color-15);
+  @include keys-color(var(--color-15));
 }
 
 .obsolete {
-  color: var(--color-16);
+  @include keys-color(var(--color-16));
 }

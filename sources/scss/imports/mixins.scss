@@ -25,3 +25,12 @@
     }
   }
 }
+@mixin keys-color($color) {
+  &.element {
+    color: $color;
+  }
+
+  &::before {
+    background-color: $color;
+  }
+}
