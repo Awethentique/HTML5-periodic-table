@@ -46,10 +46,12 @@ $(document).ready(function () {
   };
   // hide loader for starting
   $(window).on('load', function () {
+    $('#loader').removeClass('hidden');
+
     setTimeout(function () {
       var $ = jQuery;
-      var $container = $('.loader');
+      var $container = $('#loader');
       $container.addClass('hidden');
-    }, 1800);
+    }, 1500);
   });
 });
