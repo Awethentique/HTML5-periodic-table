@@ -7,7 +7,7 @@ const { cssLoaders } = require('./util');
 const configureDevServer = () => {
   return {
     contentBase: './sources',
-    // open: true,
+    open: true,
     port: 8082,
     inline: true,
     stats: "errors-only",
